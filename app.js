@@ -31,9 +31,10 @@ function set() {
         `
           <div class="post" id="post">
           <div class="post__avatar">
-          <img src="images/as.jpeg"/>
+          
         </div>
           <div class="post__body">
+          <img src="images/as.jpeg"/>
           <div class="post__header">
             <div class="post__headerText">
            
@@ -62,12 +63,13 @@ function set() {
             </div>
           </div>
           
-          <div class="post__footer">
+          
+        </div>
+        <div class="post__footer">
             <span class="material-icons"> repeat </span>
             <span class="material-icons"> favorite_border </span>
             <span class="material-icons"> publish </span>
           </div>
-        </div>
       </div>
       </div>`
       );
