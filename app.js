@@ -1,36 +1,34 @@
+let textArea = document.getElementById("textArea");
+let charLimit = document.getElementById("charLimit");
+let add = document.getElementById("sidebar__tweet");
 
- 
-let textArea = document.getElementById('textArea');
-let charLimit = document.getElementById('charLimit');
-let add = document.getElementById('sidebar__tweet');
+charLimit.textContent = `${textArea.maxLength} / 200`; // CharLimit
 
-charLimit.textContent = `${textArea.maxLength} / 200`; // CharLimit 
-
-textArea.addEventListener('input', () => {
+textArea.addEventListener("input", () => {
   let remainingChars = textArea.maxLength - textArea.value.length;
   charLimit.textContent = `${remainingChars} / 200`;
 });
 
-add.addEventListener('click', function(){
+add.addEventListener("click", function () {
   textArea.focus();
 });
-set(); 
+set();
 
-function set(){ 
-    var feed = document.getElementById('post');
-    var posted = document.getElementById('textArea');
-    feed.innerHTML = ""; 
-    posted.value = "";
-    charLimit.textContent = `${textArea.maxLength} /200`; 
+function set() {
+  var feed = document.getElementById("post");
+  var posted = document.getElementById("textArea");
+  feed.innerHTML = "";
+  posted.value = "";
+  charLimit.textContent = `${textArea.maxLength} /200`;
 
-    if(localStorage.getItem('array_p') !== null ){ 
-        var array_p = JSON.parse(localStorage.getItem('array_p')); 
+  if (localStorage.getItem("array_p") !== null) {
+    var array_p = JSON.parse(localStorage.getItem("array_p"));
 
-    array_p.forEach((data,index) =>{ 
-        var dateConverted = new Date(data.date); 
-        feed.insertAdjacentHTML(
-          "afterbegin",
-          `
+    array_p.forEach((data, index) => {
+      var dateConverted = new Date(data.date);
+      feed.insertAdjacentHTML(
+        "afterbegin",
+        `
           <div class="post" id="post">
           <div class="post__avatar">
           <img src="images/as.jpeg"/>
@@ -43,13 +41,19 @@ function set(){
                 Nereous Ynitsed Dacanay
                 <span class="post__headerSpecial"
                   ><span class="material-icons post__badge"> verified </span>@NYDacanay<br>
-                  ${dateConverted.toDateString()} ${dateConverted.getHours()% 12 }:${dateConverted.getMinutes()} ${dateConverted.getHours() >= 12 ? "PM": "AM"}</span>
+                  ${dateConverted.toDateString()} ${
+          dateConverted.getHours() % 12
+        }:${dateConverted.getMinutes()} ${
+          dateConverted.getHours() >= 12 ? "PM" : "AM"
+        }</span>
                   
                   </h3>
               
             </div>
             <div class="post_message">
-                `+data.comment+`
+                ` +
+          data.comment +
+          `
 
 
 
@@ -65,34 +69,35 @@ function set(){
           </div>
         </div>
       </div>
-      </div>`);
+      </div>`
+      );
     });
-    }
+  }
 }
 
-
-function submit(){
+function submit() {
   let array_p;
-   var items = document.getElementById('textArea').value; 
-   if(localStorage.getItem("array_p") == null ){ 
-      array_p = [{
-          comment: items, 
-          date: new Date()
-      }];
-      localStorage.setItem("array_p",JSON.stringify(array_p)); 
-    } else { 
-      array_p = JSON.parse(localStorage.getItem("array_p")); 
-      array_p.push({
-        comment: items, 
-        date: new Date()
-      });
-      localStorage.setItem("array_p",JSON.stringify(array_p));
-    }
-    set();
+  var items = document.getElementById("textArea").value;
+  if (localStorage.getItem("array_p") == null) {
+    array_p = [
+      {
+        comment: items,
+        date: new Date(),
+      },
+    ];
+    localStorage.setItem("array_p", JSON.stringify(array_p));
+  } else {
+    array_p = JSON.parse(localStorage.getItem("array_p"));
+    array_p.push({
+      comment: items,
+      date: new Date(),
+    });
+    localStorage.setItem("array_p", JSON.stringify(array_p));
+  }
+  set();
 }
 
-
-
+console.log("Teses");
 //Dark-mode
 /*var darkModeToggle = document.getElementById("dark-mode");
     darkModeToggle.addEventListener("click", function() {
@@ -118,23 +123,18 @@ function submit(){
     
   }
 }); */
-let themeToggler = document.getElementById('dark-mode');
+let themeToggler = document.getElementById("dark-mode");
 
 themeToggler.onclick = () => {
-  themeToggler.classList.toggle('dark-mode');
+  themeToggler.classList.toggle("dark-mode");
   var textArea = document.getElementById("textArea");
-  if (themeToggler.classList.contains('dark-mode')) {
-    document.body.classList.add('dark-mode');
-    textArea.style.backgroundColor = "#22262a"; 
-    textArea.style.color = "white"; 
-
+  if (themeToggler.classList.contains("dark-mode")) {
+    document.body.classList.add("dark-mode");
+    textArea.style.backgroundColor = "#22262a";
+    textArea.style.color = "white";
   } else {
-    document.body.classList.remove('dark-mode');
-    textArea.style.backgroundColor = "white"; 
-    textArea.style.color = "#22262a"; 
+    document.body.classList.remove("dark-mode");
+    textArea.style.backgroundColor = "white";
+    textArea.style.color = "#22262a";
   }
 };
-
-
-
-
