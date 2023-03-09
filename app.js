@@ -29,10 +29,7 @@ function set() {
       feed.insertAdjacentHTML(
         "afterbegin",
         `
-          <div class="post" id="post">
-          <div class="post__avatar">
           
-        </div>
           <div class="post__body">
           <img src="images/as.jpeg"/>
           <div class="post__header">
