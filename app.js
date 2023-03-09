@@ -33,20 +33,21 @@ function set(){
           `
           <div class="post" id="post">
           <div class="post__avatar">
-          <img src="images/as.jpeg"/><h3>
-                Nereous Ynitsed Dacanay
-                <span class="post__headerSpecial"
-                  ><span class="material-icons post__badge"> verified </span>@NYDacanay<br>
-                  ${dateConverted.toDateString()} ${dateConverted.getHours()% 12 }:${dateConverted.getMinutes()} ${dateConverted.getHours() >= 12 ? "PM": "AM"}</span>
-                  
-                  </h3>
+          <img src="images/as.jpeg"/> <h3>
+          Nereous Ynitsed Dacanay
+          <span class="post__headerSpecial"
+            ><span class="material-icons post__badge"> verified </span>@NYDacanay<br>
+            ${dateConverted.toDateString()} ${dateConverted.getHours()% 12 }:${dateConverted.getMinutes()} ${dateConverted.getHours() >= 12 ? "PM": "AM"}</span>
+            
+            </h3>
+          
           </div>
           <div class="post__body">
           <div class="post__header">
           
             <div class="post__headerText">
            
-              
+             
               
             </div>
             <div class="post_message">
