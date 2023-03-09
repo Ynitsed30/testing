@@ -74,6 +74,7 @@ function set() {
   }
 }
 
+console.log("Dsadas");
 function submit() {
   let array_p;
   var items = document.getElementById("textArea").value;
