@@ -97,7 +97,6 @@ function submit() {
   set();
 }
 
-console.log("Teses");
 //Dark-mode
 /*var darkModeToggle = document.getElementById("dark-mode");
     darkModeToggle.addEventListener("click", function() {
